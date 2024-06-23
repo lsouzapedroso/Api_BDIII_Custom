@@ -18,28 +18,29 @@ import jakarta.persistence.ManyToOne;
 public class Carro {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "idTitulo")
+    @Column(name = "idCarro")
     private Long id;
     @Column(nullable = false)
-    private String descricao;
-    @ManyToOne
-    @JoinColumn(name = "idUsuario")
-    private Usuario usuario;
-    private ETipoCarro tipo;
-    @ManyToMany
-    @JoinTable(
-        name="titulo_centrodecusto",
-        joinColumns = @JoinColumn(name="idTitulo"),
-        inverseJoinColumns = @JoinColumn(name="idCentroDeCusto")
-    )
-    private List<CentroDeCusto> centrosDeCustos;
+    private String modelo;
     @Column(nullable = false)
-    private Double valor;
-    private Date dataCadastro;
-    private Date dataReferencia;
-    private Date dataVencimento;
-    private Date dataPagamento;
-    @Column(columnDefinition = "TEXT")
-    private String observacao;
+    private String marca;
+    @Column(nullable = false)
+    private String cor;
+    @Column(nullable = false)
+    private String potencia;
+    @Column(nullable = false)
+    private String ano;
 
+    public Long getId() {return id;}
+    public void setId(Long id) {this.id = id;}
+    public String getModelo() {return modelo;}
+    public void setModelo(String modelo) {this.modelo = modelo;}
+    public String getMarca() {return marca;}
+    public void setMarca(String marca) {this.marca = marca;}
+    public String getCor() {return cor;}
+    public void setCor(String cor) {this.cor = cor;}
+    public String getPotencia() {return potencia;}
+    public void setPotencia(String potencia) {this.potencia = potencia;}
+    public String getAno() {return ano;}
+    public void setAno(String ano) {this.ano = ano;}
 }

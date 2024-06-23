@@ -14,6 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
+@Entity
 public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,8 +28,7 @@ public class Usuario {
     @Column(nullable = false)
     private Date dataCadastro;
     private Date dataInativacao;
-    @OneToMany(mappedBy = "usuario")
-    private List<Carro> carros;
+
     
     public Long getId() {
         return id;
@@ -57,19 +57,11 @@ public class Usuario {
     public Date getDataCadastro() {
         return dataCadastro;
     }
-    public void setDataCadastro(Date dataCadastro) {
-        this.dataCadastro = dataCadastro;
-    }
+    public void setDataCadastro(Date dataCadastro) {this.dataCadastro = dataCadastro;}
     public Date getDataInativacao() {
         return dataInativacao;
     }
     public void setDataInativacao(Date dataInativacao) {
         this.dataInativacao = dataInativacao;
-    }
-    public List<Carro> getCarros() {
-        return carros;
-    }
-    public void setCarros(List<Carro> carros) {
-        this.carros = carros;
     }
 }
