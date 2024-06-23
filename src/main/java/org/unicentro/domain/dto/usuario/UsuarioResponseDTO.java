@@ -12,29 +12,29 @@ public class UsuarioResponseDTO {
     public Long getId() {
         return id;
     }
-    public String getNome() {
-        return nome;
-    }
-    public String getEmail() {
-        return email;
-    }
-    public Date getDataCadastro() {
-        return dataCadastro;
-    }
-    public Date getDataInativacao() {
-        return dataInativacao;
-    }
     public void setId(Long id) {
         this.id = id;
+    }
+    public String getNome() {
+        return nome;
     }
     public void setNome(String nome) {
         this.nome = nome;
     }
+    public String getEmail() {
+        return email;
+    }
     public void setEmail(String email) {
         this.email = email;
     }
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+    public Date getDataInativacao() {
+        return dataInativacao;
     }
     public void setDataInativacao(Date dataInativacao) {
         this.dataInativacao = dataInativacao;
