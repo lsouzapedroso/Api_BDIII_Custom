@@ -1,4 +1,4 @@
-package org.unicentro.usuario;
+package org.unicentro.domain.dto.usuario;
 
 import java.util.Date;
 
@@ -8,7 +8,7 @@ public class UsuarioResponseDTO {
     private String email;
     private Date dataCadastro;
     private Date dataInativacao;
-    
+
     public Long getId() {
         return id;
     }

@@ -1,4 +1,4 @@
-package org.unicentro.usuario;
+package org.unicentro.domain.dto.usuario;
 
 public class UsuarioRequestDTO {
     private String nome;
