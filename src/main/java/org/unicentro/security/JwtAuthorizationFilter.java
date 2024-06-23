@@ -7,7 +7,7 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
-import com.meusgastosta.meusgastosta.domain.model.Usuario;//importar usuario certo
+import org.unicentro.domain.model.Usuario;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -47,8 +47,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter{
     getAuthenticationToken(String token){
         if(jwtUtil.isValidToken(token)){
             String email = jwtUtil.getUserName(token);
-            Usuario usuario = (Usuario)
-            userDetailsSecurityServer.loadUserByUsername(email);
+            Usuario usuario = (Usuario) userDetailsSecurityServer.loadUserByUsername(email);
             return new UsernamePasswordAuthenticationToken(usuario,
              null, usuario.getAuthorities());
         }

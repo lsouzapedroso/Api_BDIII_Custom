@@ -19,6 +19,11 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import org.unicentro.domain.dto.usuario.LoginRequestDTO;
+import org.unicentro.domain.dto.usuario.LoginResponseDTO;
+import org.unicentro.domain.dto.usuario.UsuarioResponseDTO;
+import org.unicentro.domain.model.ErroResposta;
+import org.unicentro.domain.model.Usuario;
 
 public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
     private AuthenticationManager authenticationManager;
@@ -62,7 +67,6 @@ public class JwtAuthenticationFilter extends UsernamePasswordAuthenticationFilte
         UsuarioResponseDTO usuarioResponse = new UsuarioResponseDTO();
         usuarioResponse.setId(usuario.getId());
         usuarioResponse.setNome(usuario.getNome());
-        usuarioResponse.setFoto(usuario.getFoto());
         usuarioResponse.setDataCadastro(usuario.getDataCadastro());
         usuarioResponse.setDataInativacao(usuario.getDataInativacao());
         LoginResponseDTO loginResponseDTO = new LoginResponseDTO();

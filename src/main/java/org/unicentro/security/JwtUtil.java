@@ -1,10 +1,12 @@
+package org.unicentro.security;
+
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import java.security.Key;
-import com.meusgastosta.meusgastosta.domain.model.Usuario;//importar usuario certo
+import org.unicentro.domain.model.Usuario;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -40,13 +42,13 @@ public class JwtUtil {
     try{
         Key secretKey = Keys.hmacShaKeyFor(jwtSecret
         .getBytes("UTF-8"));
-        Claims claims = Jwts.parserBuilder()
+        Claims claims = Jwts.parser()
         .setSigningKey(secretKey)
         .build()
         .parseClaimsJws(token).getBody();
         return claims;
     }catch(Exception e){
-        e.printStackTrace();
+        System.out.println(e.getMessage());
         return null;
     }
  }
