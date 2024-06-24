@@ -2,15 +2,8 @@ package org.unicentro.domain.model;
 import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.JoinTable;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
+
 
 @Entity
 public class Carro {
@@ -28,6 +21,9 @@ public class Carro {
     private String potencia;
     @Column(nullable = false)
     private String ano;
+
+    @OneToMany(mappedBy = "carro")
+    private List<CarroUsuario> usuarios;
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
