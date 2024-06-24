@@ -8,5 +8,4 @@ public interface ICRUDService<Request, Response>{
     Response cadastrar(Request dto);
     Response atualizar(Long id, Request dto);
     void deletar(Long id);
-
 }

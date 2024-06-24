@@ -23,8 +23,6 @@ public class Usuario implements UserDetails {
     @Column(nullable = false)
     private Date dataCadastro;
     private Date dataInativacao;
-    @OneToMany(mappedBy = "usuario")
-    private List<CarroUsuario> carros;
 
     public Long getId() {
         return id;

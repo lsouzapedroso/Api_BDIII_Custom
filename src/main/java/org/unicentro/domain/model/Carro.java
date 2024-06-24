@@ -18,12 +18,12 @@ public class Carro {
     @Column(nullable = false)
     private String cor;
     @Column(nullable = false)
-    private String potencia;
+    private int potencia;
     @Column(nullable = false)
-    private String ano;
-
-    @OneToMany(mappedBy = "carro")
-    private List<CarroUsuario> usuarios;
+    private int ano;
+    @ManyToOne
+    @JoinColumn(name = "idUsuario")
+    private Usuario usuario;
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
@@ -33,8 +33,10 @@ public class Carro {
     public void setMarca(String marca) {this.marca = marca;}
     public String getCor() {return cor;}
     public void setCor(String cor) {this.cor = cor;}
-    public String getPotencia() {return potencia;}
-    public void setPotencia(String potencia) {this.potencia = potencia;}
-    public String getAno() {return ano;}
-    public void setAno(String ano) {this.ano = ano;}
+    public int getPotencia() {return potencia;}
+    public void setPotencia(int potencia) {this.potencia = potencia;}
+    public int getAno() {return ano;}
+    public void setAno(int ano) {this.ano = ano;}
+    public Usuario getUsuario() {return usuario;}
+    public void setUsuario(Usuario usuario) {this.usuario = usuario;}
 }

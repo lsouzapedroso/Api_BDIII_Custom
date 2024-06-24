@@ -2,7 +2,6 @@ package org.unicentro.domain.dto.carro;
 
 import java.util.List;
 
-//Carros: modelo, marca, cor, potência e ano
 public class CarroRequestDTO {
     private Long id;
     private String modelo;
